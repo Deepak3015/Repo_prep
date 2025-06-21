@@ -39,73 +39,109 @@
 
 // }
 
+// using System;
+
+// class Program
+// {
+//     public static void Add_number(int a, int b)
+//     {
+//         int result = a + b;
+//         Console.WriteLine($"The result is: {result}");
+//     }
+
+//     public static void Subtract_number(int a, int b)
+//     {
+//         int result = a - b;
+//         Console.WriteLine($"The result is: {result}");
+//     }
+
+//     public static void Multiply_number(int a, int b)
+//     {
+//         int result = a * b;
+//         Console.WriteLine($"The result is: {result}");
+//     }
+
+//     public static void Divide_number(int a, int b)
+//     {
+//         double result = (double)a / b;
+//         Console.WriteLine($"The result is: {result}");
+//     }
+
+//     static void Main(string[] args)
+//     {
+//         string opt;
+
+//         do
+//         {
+//             Console.Write("Enter your first number: ");
+//             int num1 = int.Parse(Console.ReadLine());
+
+//             Console.Write("Enter your second number: ");
+//             int num2 = int.Parse(Console.ReadLine());
+
+//             Console.WriteLine("\nChoose your operator (+, -, *, /): ");
+//             string op = Console.ReadLine();
+
+//             switch (op)
+//             {
+//                 case "+":
+//                     Add_number(num1, num2);
+//                     break;
+//                 case "-":
+//                     Subtract_number(num1, num2);
+//                     break;
+//                 case "*":
+//                     Multiply_number(num1, num2);
+//                     break;
+//                 case "/":
+//                     Divide_number(num1, num2);
+//                     break;
+//                 default:
+//                     Console.WriteLine("Invalid operator!");
+//                     break;
+//             }
+
+//             Console.Write("\nDo you want to perform another calculation? (yes/no): ");
+//             opt = Console.ReadLine().ToLower();
+
+//         } while (opt == "yes");
+
+//         Console.WriteLine("Thanks for using the calculator!");
+//     }
+// }
+
 using System;
-
-class Program
+namespace Constructorincsharp
 {
-    public static void Add_number(int a, int b)
+    class Student_info
     {
-        int result = a + b;
-        Console.WriteLine($"The result is: {result}");
-    }
-
-    public static void Subtract_number(int a, int b)
-    {
-        int result = a - b;
-        Console.WriteLine($"The result is: {result}");
-    }
-
-    public static void Multiply_number(int a, int b)
-    {
-        int result = a * b;
-        Console.WriteLine($"The result is: {result}");
-    }
-
-    public static void Divide_number(int a, int b)
-    {
-        double result = (double)a / b;
-        Console.WriteLine($"The result is: {result}");
-    }
-
-    static void Main(string[] args)
-    {
-        string opt;
-
-        do
+        public int age;
+        public string standard;
+        public int id;
+        public string name;
+        public Student_info(string name, int age, string standard, int id)
         {
-            Console.Write("Enter your first number: ");
-            int num1 = int.Parse(Console.ReadLine());
+            this.name = name;
+            this.age = age;
+            this.id = id;
+            this.standard = standard;
+        }
 
-            Console.Write("Enter your second number: ");
-            int num2 = int.Parse(Console.ReadLine());
+        public string Student_get(int id)
+        {
+            return this.name;
 
-            Console.WriteLine("\nChoose your operator (+, -, *, /): ");
-            string op = Console.ReadLine();
+        }
 
-            switch (op)
-            {
-                case "+":
-                    Add_number(num1, num2);
-                    break;
-                case "-":
-                    Subtract_number(num1, num2);
-                    break;
-                case "*":
-                    Multiply_number(num1, num2);
-                    break;
-                case "/":
-                    Divide_number(num1, num2);
-                    break;
-                default:
-                    Console.WriteLine("Invalid operator!");
-                    break;
-            }
 
-            Console.Write("\nDo you want to perform another calculation? (yes/no): ");
-            opt = Console.ReadLine().ToLower();
 
-        } while (opt == "yes");
+        static void Main(string[] args)
+        {
+            Student_info deepak = new Student_info("deepak", 19, "Tweleve", 1002);
+            Console.WriteLine(deepak.Student_get(1002));
 
-        Console.WriteLine("Thanks for using the calculator!");
+        }
+        
+
     }
 }
